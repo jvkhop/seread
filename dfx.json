@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "seread_backend": {
+      "main": "src/seread_backend/main.mo",
+      "type": "motoko"
+    },
+    "seread_frontend": {
+      "dependencies": [
+        "seread_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/seread_frontend/src/index.html"
+      },
+      "source": [
+        "src/seread_frontend/assets",
+        "dist/seread_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
