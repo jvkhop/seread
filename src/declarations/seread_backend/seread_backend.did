@@ -1,0 +1,10 @@
+type Post = 
+ record {
+   content: text;
+   timestamp: int;
+   title: text;
+ };
+service : {
+  getAllSecrets: () -> (vec Post) query;
+  share: (principal, Post) -> () oneway;
+}

@@ -11,11 +11,11 @@
 .dfx/
 
 # generated files
-src/declarations/
+# src/declarations/
 
 # frontend code
 node_modules/
 dist/
 
 # environment variables
-.env
+# .env
