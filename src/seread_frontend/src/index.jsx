@@ -1,9 +1,7 @@
-import ReactDOM from 'react-dom/client';
 import React from 'react';
-import App from "./components/App";
+import ReactDOM from 'react-dom/client';
+import AuthButton from './components/AuthButton';
 
-const root = document.getElementById("root");
+const root = document.getElementById('root');
 const rootElement = ReactDOM.createRoot(root);
-rootElement.render(<App />);
-
-
+rootElement.render(<AuthButton />);

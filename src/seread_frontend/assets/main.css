@@ -1,48 +1,40 @@
+/* App.css (or your main CSS file) */
+
+/* General styles */
+
 html {
-  background: #a5a4ce;
-  font-family: System, monospace;
-  font-size: 10pt;
+  background: #1b1b1b; /* Dark background */
+  font-family: 'Cinzel', serif; /* Elegant, old-style serif font */
+  font-size: 12pt;
+  color: #e0e0e0; /* Light text for readability */
 }
 
 body {
   padding: 0;
   margin: 0;
+  background: #121212; /* Slightly lighter dark background */
 }
 
-span:after {
-  content: " ";
-  display: inline-block;
-  width: 2%;
-}
-
-fieldset {
-  float: left;
-  padding-right: 18px;
-}
-
-#logo {
-  font-family: "Times";
-  font-size: 20pt;
-}
+/* Styling for windows/sections */
 
 .window {
   position: relative;
   cursor: default;
   margin: 2em auto;
   width: 80%;
-  background: #3465a4;
-  color: white;
-  border: 6px double white;
+  background: #2a2a2a; /* Dark gray background */
+  color: #dcdcdc; /* Light text */
+  border: 1px solid #444; /* Dark border */
   padding: 1em;
-  box-shadow: 0 0 0 3px #3465a4, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
   max-width: 640px;
+  font-family: 'Cinzel', serif;
 }
 
 .window.white {
-  background: silver;
-  color: black;
-  border-color: white;
-  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
+  background: #333; /* Slightly lighter background */
+  color: #dcdcdc; /* Light text */
+  border-color: #555; /* Darker border */
 }
 
 .window.half-width {
@@ -51,34 +43,33 @@ fieldset {
 
 .window h1 {
   text-align: center;
+  font-size: 24pt; /* Larger font for headings */
+  font-family: 'Cinzel Decorative', serif; /* Ornate font for headings */
+  margin-bottom: 1em;
+  color: #e0e0e0; /* Light text */
 }
 
-.window.blue p {
-  color: white;
-  text-shadow: 0 0 2px white;
+/* Styling for paragraphs within .window */
+.window p {
+  color: #dcdcdc; /* Light text */
 }
 
-button {
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
+/* Button styles for mysterious feel */
 
 button,
 .button,
 .button:link {
   display: inline-block;
-  font-weight: bolder;
-  color: white;
-  font-family: inherit;
-  font-size: inherit;
-  background: green;
-  padding: 0 1em;
+  font-weight: bold;
+  color: #fff; /* White text */
+  font-family: 'Cinzel', serif; /* Elegant font for buttons */
+  font-size: 14pt;
+  background: #444; /* Dark background */
+  padding: 0.8em 1.5em; /* Larger padding */
+  border: 1px solid #666; /* Border color */
   box-shadow: 0.5em 0.5em 3px rgba(0, 0, 0, 0.5);
   position: relative;
   transition: 0.2s all ease-in;
-  border: 1px outset green;
 }
 
 button.full-width,
@@ -87,32 +78,13 @@ button.full-width,
   text-align: center;
 }
 
-button:before,
-.button:before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  position: absolute;
-  /*background: rgba(255,255,0,.5); /* DEBUG CLICK AREA */
-}
-
 button:hover,
 .button:active,
 .button:focus,
 .button:hover {
   transform: translate3d(0.25em, 0.25em, 10em);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
-  background: limegreen;
-}
-
-button:hover:before,
-.button:hover:before,
-button:focus:before,
-.button:focus:before {
-  top: -1em;
-  left: -1em;
+  background: #555; /* Lighter background on hover */
 }
 
 .button.pressed {
@@ -120,38 +92,34 @@ button:focus:before,
   left: 0.25em;
   top: 0.25em;
   margin-right: 0.25em;
-  background: gray;
-  border: 1px outset #707070;
+  background: #222; /* Darker background when pressed */
+  border: 1px solid #666;
 }
 
 button:disabled {
   transform: translate3d(0.25em, 0.25em, 10em);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
-  background: gray;
-  border: 1px outset #707070;
+  background: #666; /* Light gray background for disabled */
+  border: 1px solid #999; /* Light gray border for disabled */
 }
 
-button:first-letter,
-.button:first-letter {
-  color: yellow;
-}
-
-button#btn-transfer {
-  margin-top: 20px;
-}
+/* Input and textarea styles */
 
 input,
 textarea {
-  background: blue;
-  color: aqua;
+  background: #2a2a2a; /* Dark background */
+  color: #e0e0e0; /* Light text */
   width: 100%;
   max-width: 100%;
   font-size: 12pt;
+  padding: 0.5em; /* Padding for inputs */
+  border: 2px solid #444; /* Dark border */
 }
+
 input:disabled {
-  background: #505070;
-  color: #d0d0d0;
-  border: 2px solid #505070;
+  background: #333; /* Dark gray background for disabled */
+  color: #888; /* Gray text for disabled */
+  border: 2px solid #555; /* Dark border for disabled */
 }
 
 .window > textarea {
@@ -178,4 +146,33 @@ li {
 div .transfer {
   display: table;
   margin: auto;
+}
+
+/* Navbar styles */
+
+nav {
+  background-color: #121212; /* Dark background for navbar */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+a {
+  color: #dcdcdc; /* Light links */
+  text-decoration: none;
+  font-family: 'Cinzel Decorative', serif; /* Ornate font for links */
+}
+
+a:hover {
+  text-decoration: underline;
 }
