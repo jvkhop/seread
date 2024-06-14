@@ -38,7 +38,7 @@ actor {
     var posts = HashMap.HashMap<Principal, Post>(0, Principal.equal, Principal.hash);
 
     //Allow users to post their secrets
-    public func share(id: Principal, post: Post) {
+    public shared func share(id: Principal, post: Post) {
         let newPost : Post = {
             title = post.title;
             content = post.content;

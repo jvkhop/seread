@@ -1,9 +1,12 @@
-// Navbar.jsx
+// src/components/Navbar.jsx
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
 function Navbar() {
+  const { isAuthenticated, handleLogin, handleLogout } = useContext(AuthContext);
+
   return (
     <nav>
       <ul>
@@ -14,9 +17,12 @@ function Navbar() {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/login">Log in</Link>
+          {isAuthenticated ? (
+            <button onClick={handleLogout}>Log out</button>
+          ) : (
+            <button onClick={handleLogin}>Log in with Internet Identity</button>
+          )}
         </li>
-        {/* Add more links as needed */}
       </ul>
     </nav>
   );
