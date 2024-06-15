@@ -6,5 +6,5 @@ type Post =
  };
 service : {
   getAllSecrets: () -> (vec Post) query;
-  share: (principal, Post) -> () oneway;
+  share: (Post) -> () oneway;
 }

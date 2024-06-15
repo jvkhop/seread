@@ -1,7 +1,8 @@
-// About.jsx
+
 
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../common/Navbar";
+import '../../../assets/styles/about.css';
 
 function About() {
   return (

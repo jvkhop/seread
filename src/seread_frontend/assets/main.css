@@ -1,178 +1,30 @@
-/* App.css (or your main CSS file) */
-
-/* General styles */
-
-html {
-  background: #1b1b1b; /* Dark background */
-  font-family: 'Cinzel', serif; /* Elegant, old-style serif font */
-  font-size: 12pt;
-  color: #e0e0e0; /* Light text for readability */
-}
-
 body {
-  padding: 0;
   margin: 0;
-  background: #121212; /* Slightly lighter dark background */
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
 }
-
-/* Styling for windows/sections */
-
-.window {
-  position: relative;
-  cursor: default;
-  margin: 2em auto;
-  width: 80%;
-  background: #2a2a2a; /* Dark gray background */
-  color: #dcdcdc; /* Light text */
-  border: 1px solid #444; /* Dark border */
-  padding: 1em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
-  max-width: 640px;
-  font-family: 'Cinzel', serif;
-}
-
-.window.white {
-  background: #333; /* Slightly lighter background */
-  color: #dcdcdc; /* Light text */
-  border-color: #555; /* Darker border */
-}
-
-.window.half-width {
-  width: 50%;
-}
-
-.window h1 {
-  text-align: center;
-  font-size: 24pt; /* Larger font for headings */
-  font-family: 'Cinzel Decorative', serif; /* Ornate font for headings */
-  margin-bottom: 1em;
-  color: #e0e0e0; /* Light text */
-}
-
-/* Styling for paragraphs within .window */
-.window p {
-  color: #dcdcdc; /* Light text */
-}
-
-/* Button styles for mysterious feel */
-
-button,
-.button,
-.button:link {
-  display: inline-block;
-  font-weight: bold;
-  color: #fff; /* White text */
-  font-family: 'Cinzel', serif; /* Elegant font for buttons */
-  font-size: 14pt;
-  background: #444; /* Dark background */
-  padding: 0.8em 1.5em; /* Larger padding */
-  border: 1px solid #666; /* Border color */
-  box-shadow: 0.5em 0.5em 3px rgba(0, 0, 0, 0.5);
-  position: relative;
-  transition: 0.2s all ease-in;
-}
-
-button.full-width,
-.button.full-width {
-  display: block;
-  text-align: center;
-}
-
-button:hover,
-.button:active,
-.button:focus,
-.button:hover {
-  transform: translate3d(0.25em, 0.25em, 10em);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
-  background: #555; /* Lighter background on hover */
-}
-
-.button.pressed {
-  box-shadow: none;
-  left: 0.25em;
-  top: 0.25em;
-  margin-right: 0.25em;
-  background: #222; /* Darker background when pressed */
-  border: 1px solid #666;
-}
-
-button:disabled {
-  transform: translate3d(0.25em, 0.25em, 10em);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
-  background: #666; /* Light gray background for disabled */
-  border: 1px solid #999; /* Light gray border for disabled */
-}
-
-/* Input and textarea styles */
-
-input,
-textarea {
-  background: #2a2a2a; /* Dark background */
-  color: #e0e0e0; /* Light text */
-  width: 100%;
-  max-width: 100%;
-  font-size: 12pt;
-  padding: 0.5em; /* Padding for inputs */
-  border: 2px solid #444; /* Dark border */
-}
-
-input:disabled {
-  background: #333; /* Dark gray background for disabled */
-  color: #888; /* Gray text for disabled */
-  border: 2px solid #555; /* Dark border for disabled */
-}
-
-.window > textarea {
-  width: 100%;
-  border: none;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.trade-buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-div .transfer {
-  display: table;
-  margin: auto;
-}
-
-/* Navbar styles */
 
 nav {
-  background-color: #121212; /* Dark background for navbar */
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-ul {
+nav ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
-li {
+nav ul li {
   display: inline;
-  margin-right: 10px;
 }
 
-a {
-  color: #dcdcdc; /* Light links */
+nav a {
+  color: #fff;
   text-decoration: none;
-  font-family: 'Cinzel Decorative', serif; /* Ornate font for links */
-}
-
-a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }

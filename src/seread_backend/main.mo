@@ -1,24 +1,14 @@
 //
 import Result "mo:base/Result";
-//
 import Buffer "mo:base/Buffer";
-//
 import HashMap "mo:base/HashMap";
-//
 import Iter "mo:base/Iter";
-//
 import Principal "mo:base/Principal";
-//
 import Option "mo:base/Option";
-//
 import Types "types";
-//
 import Nat32 "mo:base/Nat32";
-//
 import Hash "mo:base/Hash";
-//
 import Time "mo:base/Time";
-//
 import Array "mo:base/Array";
 
 
@@ -38,13 +28,13 @@ actor {
     var posts = HashMap.HashMap<Principal, Post>(0, Principal.equal, Principal.hash);
 
     //Allow users to post their secrets
-    public shared func share(id: Principal, post: Post) {
+    public shared (msg) func share(post: Post) {
         let newPost : Post = {
             title = post.title;
             content = post.content;
             timestamp = Time.now(); 
         };
-        posts.put(id, newPost);
+        posts.put(msg.caller, newPost);
     };
 
     public query func getAllSecrets() : async [Post] {  

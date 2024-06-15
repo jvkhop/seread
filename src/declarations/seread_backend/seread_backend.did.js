@@ -6,7 +6,7 @@ export const idlFactory = ({ IDL }) => {
   });
   return IDL.Service({
     'getAllSecrets' : IDL.Func([], [IDL.Vec(Post)], ['query']),
-    'share' : IDL.Func([IDL.Principal, Post], [], ['oneway']),
+    'share' : IDL.Func([Post], [], ['oneway']),
   });
 };
 export const init = ({ IDL }) => { return []; };

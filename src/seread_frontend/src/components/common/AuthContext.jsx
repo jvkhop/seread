@@ -1,17 +1,20 @@
-// src/components/AuthContext.js
-
 import React, { createContext, useState, useEffect } from 'react';
 import { AuthClient } from '@dfinity/auth-client';
+import { useNavigate } from 'react-router-dom'; //new
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate(); //new
 
   useEffect(() => {
     const checkAuth = async () => {
       const authClient = await AuthClient.create();
       setIsAuthenticated(await authClient.isAuthenticated());
+      if (await authClient.isAuthenticated()) { //new
+        navigate('/secrets');
+      }
     };
     checkAuth();
   }, []);
@@ -20,7 +23,10 @@ export const AuthProvider = ({ children }) => {
     const authClient = await AuthClient.create();
     await authClient.login({
       identityProvider: "https://identity.ic0.app/#authorize",
-      onSuccess: () => setIsAuthenticated(true),
+      onSuccess: () => {
+        setIsAuthenticated(true); 
+        navigate('/secrets'); //new
+      }
     });
   };
 

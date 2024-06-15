@@ -1,0 +1,40 @@
+#screen {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 20%;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #2c3e50; /* Dark but not black */
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #34495e; /* Slightly lighter shade */
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2980b9; /* Mysterious blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3498db; /* Lighter blue on hover */
+  }

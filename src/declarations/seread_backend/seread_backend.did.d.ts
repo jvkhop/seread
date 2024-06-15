@@ -9,7 +9,7 @@ export interface Post {
 }
 export interface _SERVICE {
   'getAllSecrets' : ActorMethod<[], Array<Post>>,
-  'share' : ActorMethod<[Principal, Post], undefined>,
+  'share' : ActorMethod<[Post], undefined>,
 }
 export declare const idlFactory: IDL.InterfaceFactory;
 export declare const init: (args: { IDL: typeof IDL }) => IDL.Type[];

@@ -1,28 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
-import { AuthProvider } from './components/AuthContext';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import About from "./components/About";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-]);
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from './components/routes/AppRoutes';
+import { AuthProvider } from './components/common/AuthContext';
 
 const root = document.getElementById('root');
 const rootElement = ReactDOM.createRoot(root);
 rootElement.render(
-  <AuthProvider>
-    <RouterProvider router={router} />
-  </AuthProvider>
+  <BrowserRouter>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  </BrowserRouter>
 );

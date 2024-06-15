@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Principal } from "@dfinity/principal";
-import { seread_backend } from "../../../declarations/seread_backend";
+import { seread_backend } from "../../../../declarations/seread_backend";
+import '../../../assets/styles/secrets.css';
 
 function SecretList() {
   const [titleValue, setTitleValue] = useState("");
   const [contentValue, setContentValue] = useState("");
-  const [principalId, setPrincipalId] = useState("");
   const [isHidden, setIsHidden] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [secrets, setSecrets] = useState([]);
@@ -25,9 +24,8 @@ function SecretList() {
         return;
       }
 
-      const principal = Principal.fromText(principalId);
       const newPost = { title: titleValue, content: contentValue, timestamp: BigInt(Date.now() * 1000000) };
-      await seread_backend.share(principal, newPost);
+      await seread_backend.share(newPost);
 
       // Add the new secret to the list
       setSecrets([...secrets, newPost]);
@@ -45,14 +43,6 @@ function SecretList() {
   return (
     <div className="window white">
       <label>Share a Secret:</label>
-      <p>
-        <input
-          type="text"
-          placeholder="Principal ID"
-          value={principalId}
-          onChange={(e) => setPrincipalId(e.target.value)}
-        />
-      </p>
       <p>
         <input
           type="text"
