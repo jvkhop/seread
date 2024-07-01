@@ -1,0 +1,35 @@
+/* body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+} */

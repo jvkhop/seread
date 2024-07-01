@@ -47,9 +47,13 @@ module.exports = {
   module: {
    rules: [
      { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
-     { test: /\.css$/, use: ['style-loader','css-loader'] }
-   ]
-  },
+     { test: /\.css$/, use: ['style-loader','css-loader'] },
+     {
+      test: /\.(png|jpg|gif|svg)$/,
+      use: ['file-loader']
+    }
+  ]
+},
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),
