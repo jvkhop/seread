@@ -1,10 +1,28 @@
+type User = 
+ record {
+   bio: text;
+   email: text;
+   "principal": principal;
+   username: text;
+ };
 type Post = 
  record {
    content: text;
+   id: nat;
+   likes: nat;
    timestamp: int;
    title: text;
+   userPrincipal: principal;
  };
 service : {
+  baddassPost: (Post) -> ();
+  checkPostId: () -> (nat) query;
+  deletePost: (nat) -> ();
   getAllSecrets: () -> (vec Post) query;
-  share: (Post) -> () oneway;
+  getId: () -> (text);
+  getPost: () -> (opt vec Post);
+  getUserProfile: (principal) -> (opt User) query;
+  registerUser: (text, text, text) -> ();
+  share: (Post) -> ();
+  updateUserProfile: (text, text, text) -> ();
 }

@@ -1,25 +1,38 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../common/AuthContext";
+import React from "react";
+// import { AuthContext } from "../common/AuthContext";
 import Navbar from "../common/Navbar";
 import '../../../assets/styles/app.css';
+import oak_planks from '../../../assets/images/Oak_Planks.png';
+
+var backgroundPic = {
+  backgroundImage: `url(${oak_planks})`,
+};
 
 function App() {
 
-  const { isAuthenticated, handleLogin } = useContext(AuthContext);
+  // const { isAuthenticated, handleLogin } = useContext(AuthContext);
 
   return (
-    <div id="screen" style={{ textAlign: "center", marginTop: "5%" }}>
-      {/* <Navbar /> */}
-      <h1 style={{ fontSize: "10rem", fontWeight: "bold", marginBottom: "0px"}}>Seread</h1>
-      <h2 style={{ fontSize: "3rem" }}>where people reveal their DARKEST secrets</h2>
-      <p style={{ marginTop: "20px", fontSize: "1.5rem" }}>Explore or Reveal Secrets now!!</p>
-      {!isAuthenticated && (
-        <button onClick={handleLogin} style={{ marginTop: "20px", padding: "10px 20px", fontSize: "1rem" }}>
-          Log in with Internet Identity
-        </button>
-      )}
-    </div>
-  );
-}
+    <div className="about-container" style={ backgroundPic }>
+      <Navbar />
+      <div className="heading">
+        <h1>Seread</h1>
+        <h2 className="sub-heading">("But wt* is this?")</h2>
+      </div>
+      <div className="content">
+        <p>
+          A place where people reveal their darkest secrets to earn IFL token (and your brain).
+          Everything is anonymous and cost you just a click.
+        </p>
+      </div>
+      <p className="CTA">Could we have your permission to have you in the Secret world, sir?</p>
+      {/* {!isAuthenticated && (
+          <button onClick={handleLogin} className="login-button">
+            Log in with Internet Identity
+          </button>
+        )} */}
+      <p className="NoteForIi">Everything is anonymous when you use Internet Identity</p>
+    </div>)
+};
 
 export default App;
