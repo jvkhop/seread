@@ -7,30 +7,26 @@ import { Principal } from '@dfinity/principal';
 import '../../../assets/styles/updateProfile.css';
 //2491391@nh301020
 const UpdateProfile = () => {
-  const [userProfile, setUserProfile] = useState({});
+  const [userProfile, setUserProfile] = useState({
+    username: 'Anonymous',
+    email: 'optional@gmail.com',
+    bio: "You're a fucking badass"
+  });
   // const { isAuthenticated, identity, principal, userCanister } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Convert backend canister ID to Principal
-  const backendId = Principal.fromText('bkyz2-fmaaa-aaaaa-qaaaq-cai');
+  const backendId = Principal.fromText('2vxsx-fae');
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       // if (isAuthenticated && principal) {
-        var profileArr = await seread_backend.getUserProfile(backendId);
-        var profile = {
-          username : profileArr[0].username,
-          email : profileArr[0].email,
-          bio : profileArr[0].bio
-        }
+      var profileArr = await seread_backend.getUserProfile(backendId);
+      var profile = Array.isArray(profileArr) ? profileArr[0] : profileArr;
 
-        if (profile != null) {
-          setUserProfile({
-            username: profile.username || '',
-            email: profile.email || '',
-            bio: profile.bio || ''
-          });
-        }
+      if (profile != null) {
+        setUserProfile(profile);
+      }
       // }
     };
     fetchUserProfile();
@@ -39,17 +35,13 @@ const UpdateProfile = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     // if (isAuthenticated && userProfile && principal) {
-      await seread_backend.updateUserProfile(userProfile.username, userProfile.email, userProfile.bio);
+    await seread_backend.updateUserProfile(userProfile.username, userProfile.email, userProfile.bio);
 
-      var profileArr = await seread_backend.getUserProfile(backendId);
-      var profile = {
-        username : profileArr[0].username,
-        email : profileArr[0].email,
-        bio : profileArr[0].bio
-      }
-      console.log(profile);
-      setUserProfile(profile);
-      // navigate('/profile');
+    const profileArr = await seread_backend.getUserProfile(backendId);
+    const profile = Array.isArray(profileArr) ? profileArr[0] : profileArr;
+    console.log(profile);
+    setUserProfile(profile);
+    // navigate('/profile');
     // }
   };
 

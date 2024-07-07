@@ -29,7 +29,7 @@ const UserProfile = () => {
 
       if (profile === null || profile === undefined) {
         console.log("Profile is empty or does not exist.");
-        await seread_backend.registerUser("Anonymous", "None", "You're a fucking badass");
+        await seread_backend.registerUser("Anonymous", "optional@gmail.com", "You're a fucking badass");
         const newProfile = await seread_backend.getUserProfile(backendId);
         const profile = newProfile[0];
         setUserProfile(profile);
