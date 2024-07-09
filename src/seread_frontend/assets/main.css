@@ -1,3 +1,14 @@
+:root {
+  --primary-color: #283618;
+  --secondary-color: silver;
+  --accent-color: #606c38;
+  --background-color: #a5a4ce;
+}
+
+body, html {
+  background-color: var(--background-color);
+}
+
 /* body {
   margin: 0;
   font-family: 'Roboto', sans-serif;

@@ -11,6 +11,19 @@ const RevealSecret = () => {
     const [contentValue, setContentValue] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const backendId = Principal.fromText('2vxsx-fae');
+
+    const [imgBase64, setImgBase64] = useState("");
+
+    function handleUpload(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImgBase64(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
     // const { isAuthenticated, principal, userCanister } = useContext(AuthContext);
     // const [likes, setLikes] = useState(0);
 
@@ -34,7 +47,8 @@ const RevealSecret = () => {
                 content: contentValue,
                 timestamp: BigInt(Date.now() * 1000000),
                 likes: BigInt(0),
-                id: 0
+                id: 0,
+                imgUrl: imgBase64
             };
 
             console.log("New Post Before Share:", newPost); // Debugging line
@@ -81,6 +95,12 @@ const RevealSecret = () => {
                                 onChange={(e) => setContentValue(e.target.value)}
                                 className="textarea-input"
                             />
+                        </div>
+
+                        <div className="image">
+                            <h2>Add Image (Optional):</h2>
+                            <input type="file" onChange={handleUpload} />
+                            {imgBase64 && <img src={imgBase64} alt="Preview" />}
                         </div>
 
                         <button type="submit" className="form-submit-btn">Reveal</button>

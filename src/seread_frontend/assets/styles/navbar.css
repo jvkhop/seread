@@ -11,7 +11,7 @@
   max-width: 200px;
   border-right-style: solid;
   border-right-width: thin;
-  border-right-color: #DAD7CD;
+  border-right-color: var(--accent-color);
 }
 
 .nav-bar {

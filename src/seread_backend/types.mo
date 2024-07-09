@@ -2,6 +2,7 @@ import Principal "mo:base/Principal";
 import Nat "mo:base/Nat";
 import Result "mo:base/Result";
 import HashMap "mo:base/HashMap";
+import Text "mo:base/Text";
 
 module {
 
@@ -15,6 +16,7 @@ module {
     timestamp: Int; 
     likes : Nat;
     id : Nat;
+    imgUrl : Text; 
   };
 
 };

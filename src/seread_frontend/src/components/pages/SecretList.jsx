@@ -6,6 +6,8 @@ import { Principal } from "@dfinity/principal";
 import Post from "../common/Post";
 import Pagination from "../common/Pagination";
 
+import "../../../assets/styles/secrets.css";
+
 function SecretList() {
   //Logic
   const [posts, setPosts] = useState([]);
@@ -67,7 +69,7 @@ function SecretList() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-  
+
   const handlePagination = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -76,23 +78,21 @@ function SecretList() {
 
 
   return (
-    <>
-      <div className="secrets-container">
-        <div className="secrets-list">
-          <Post 
-            posts={currentPosts} 
-            loading={loading}
-            handleBaddass={handleBaddass}
-          />
-          <Pagination 
-            length={posts.length} 
-            postsPerPage={postsPerPage}
-            handlePagination={handlePagination}
-            currentPage={currentPage}
-          />
-        </div>
+    <div className="secrets-container">
+      <div className="secrets-list">
+        <Post
+          posts={currentPosts}
+          loading={loading}
+          handleBaddass={handleBaddass}
+        />
+        <Pagination
+          length={posts.length}
+          postsPerPage={postsPerPage}
+          handlePagination={handlePagination}
+          currentPage={currentPage}
+        />
       </div>
-    </>
+    </div>
   );
 }
 

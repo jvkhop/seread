@@ -1,6 +1,7 @@
 export const idlFactory = ({ IDL }) => {
   const Post = IDL.Record({
     'id' : IDL.Nat,
+    'imgUrl' : IDL.Text,
     'title' : IDL.Text,
     'content' : IDL.Text,
     'likes' : IDL.Nat,

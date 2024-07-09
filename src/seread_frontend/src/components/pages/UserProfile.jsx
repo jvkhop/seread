@@ -7,10 +7,6 @@ import { Principal } from '@dfinity/principal';
 import '../../../assets/styles/profile.css';
 import oak_planks from '../../../assets/images/Oak_Planks.png';
 
-var backgroundPic = {
-  backgroundImage: `url(${oak_planks})`,
-};
-
 const principalId = await seread_backend.getId();
 
 const UserProfile = () => {
@@ -79,7 +75,7 @@ const UserProfile = () => {
   return (
     <>
       <Navbar />
-      <div className="profile-container" style={backgroundPic}>
+      <div className="profile-container" >
         <div className="profile-content">
           <label>Your Identity Card</label>
           <p>{principalId}</p>
@@ -102,9 +98,10 @@ const UserProfile = () => {
               // console.log(post); // Inspect the ID values
               return (
                 <div key={post.id} className="post-card">
+                  {post.imgUrl && <img src={post.imgUrl} />}
                   <h3>{post.title}</h3>
                   <p>{post.content}</p>
-                  <p><small>Likes: {post.likes}</small></p>
+                  <p><small>Baddass: {Number(post.likes)}</small></p>
                   <button onClick={() => handleDelete(post.id)}>Delete</button>
                 </div>
               );

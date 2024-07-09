@@ -55,6 +55,7 @@ actor {
                     timestamp = Time.now();
                     likes = 0;
                     id = postId;
+                    imgUrl = post.imgUrl;
                 };
                 Debug.print("New Post: " # debug_show(newPost.id)); // Debugging line
 
@@ -123,6 +124,7 @@ actor {
                         timestamp = post.timestamp; 
                         likes = post.likes + 1;
                         id = post.id;
+                        imgUrl = post.imgUrl;
                 };
                 let currentPosts = Option.get(posts.get(msg.caller), []);
                 var updatedPosts = Buffer.Buffer<Post>(0);

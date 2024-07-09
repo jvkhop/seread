@@ -4,6 +4,7 @@ import type { IDL } from '@dfinity/candid';
 
 export interface Post {
   'id' : bigint,
+  'imgUrl' : string,
   'title' : string,
   'content' : string,
   'likes' : bigint,
