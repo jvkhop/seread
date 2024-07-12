@@ -5,7 +5,7 @@ import Navbar from '../common/Navbar';
 import { Link } from 'react-router-dom';
 import { Principal } from '@dfinity/principal';
 import '../../../assets/styles/profile.css';
-import oak_planks from '../../../assets/images/Oak_Planks.png';
+import ReadMore from '../common/ReadMore';
 
 const principalId = await seread_backend.getId();
 
@@ -78,7 +78,7 @@ const UserProfile = () => {
       <div className="profile-container" >
         <div className="profile-content">
           <label>Your Identity Card</label>
-          <p>{principalId}</p>
+          <small>{principalId}</small>
           <div className="identity-card">
             <p>Alias: {userProfile.username}</p>
             <p>Email: {userProfile.email}</p>
@@ -87,30 +87,38 @@ const UserProfile = () => {
           <Link to="/update-profile" className="improve-card">Improve your Identity Card</Link>
         </div>
 
-        <div className="posts-section">
-          <h2>Your Secrets</h2>
-          {console.log("userPosts: ")}
-          {console.log(userPosts)}
-          <div>
-          {userPosts && userPosts.length > 0 ? (
-            userPosts.map((post) => {
-              // console.log("hehehe: ");
-              // console.log(post); // Inspect the ID values
-              return (
-                <div key={post.id} className="post-card">
-                  {post.imgUrl && <img src={post.imgUrl} />}
-                  <h3>{post.title}</h3>
-                  <p>{post.content}</p>
-                  <p><small>Baddass: {Number(post.likes)}</small></p>
-                  <button onClick={() => handleDelete(post.id)}>Delete</button>
-                </div>
-              );
-            })
-          ) : (
-            <p>You have not shared any secrets yet.</p>
-          )}
-          </div>
+
+        <div className="window white">
+          <fieldset>
+            <legend style={{ textAlign: "center" }}>Your Secrets</legend>
+            {userPosts && userPosts.length > 0 ? (
+              userPosts.map((post) => {
+                // console.log("hehehe: ");
+                // console.log(post); // Inspect the ID values
+                return (
+                  <div key={post.id} className="list1 marginChange">
+
+
+
+                    {post.imgUrl ? <img src={post.imgUrl} className="userEachImage" /> : <p>[No Image]</p>}
+                    <div className="text-part list1-item">
+                      <h3>{post.title}</h3>
+                      <ReadMore content={post.content} />
+                      <p><small>Baddass: {Number(post.likes)}</small></p>
+                    </div>
+
+
+
+                    <button onClick={() => handleDelete(post.id)}>Delete</button>
+                  </div>
+                );
+              })
+            ) : (
+              <p>You have not shared any secrets yet.</p>
+            )}
+          </fieldset>
         </div>
+
       </div>
     </>
   );

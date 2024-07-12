@@ -1,10 +1,11 @@
 .app-container {
   display: flex;
-  gap: 150px;
+  flex-direction: column;
+  /* gap: 150px; */
 }
 
 .test {
-  margin-left: 225px; 
+  /* margin-left: 225px;  */
   padding: 20px;
   padding-top: 0;
   flex-grow: 1;

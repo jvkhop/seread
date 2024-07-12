@@ -16,8 +16,8 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <div className="app-container">
-        <Navbar />
         <div className="test">
           <Greeting />
           <SecretList />

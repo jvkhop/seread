@@ -6,8 +6,6 @@ import { Principal } from "@dfinity/principal";
 import Post from "../common/Post";
 import Pagination from "../common/Pagination";
 
-import "../../../assets/styles/secrets.css";
-
 function SecretList() {
   //Logic
   const [posts, setPosts] = useState([]);
@@ -79,7 +77,9 @@ function SecretList() {
 
   return (
     <div className="secrets-container">
-      <div className="secrets-list">
+
+
+      <div className="window white">
         <Post
           posts={currentPosts}
           loading={loading}
@@ -92,6 +92,9 @@ function SecretList() {
           currentPage={currentPage}
         />
       </div>
+
+
+
     </div>
   );
 }

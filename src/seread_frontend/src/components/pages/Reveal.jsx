@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { seread_backend } from "../../../../declarations/seread_backend";
 import '../../../assets/styles/secrets.css';
 import { Principal } from "@dfinity/principal";
+import Navbar from "../common/Navbar";
 // import { AuthContext } from '../common/AuthContext';
 
 
@@ -74,41 +75,38 @@ const RevealSecret = () => {
 
     return (
         <>
-            <div className="secrets-container">
-                <div className="form-container">
-                    <form onSubmit={handleSubmit} className="from">
-                        <div className="form-group">
-                            <label htmlFor="title">Title</label>
-                            <input
-                                type="text"
-                                value={titleValue}
-                                onChange={(e) => setTitleValue(e.target.value)}
-                                className="text-input"
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="textarea">Secrets go here:</label>
-                            <textarea
-                                placeholder="Content"
-                                value={contentValue}
-                                onChange={(e) => setContentValue(e.target.value)}
-                                className="textarea-input"
-                            />
-                        </div>
-
-                        <div className="image">
-                            <h2>Add Image (Optional):</h2>
-                            <input type="file" onChange={handleUpload} />
-                            {imgBase64 && <img src={imgBase64} alt="Preview" />}
-                        </div>
-
-                        <button type="submit" className="form-submit-btn">Reveal</button>
-                        {errorMessage && <p className="error-message">{errorMessage}</p>}
-                        {!isHidden && <p>Secret shared successfully!</p>}
-                    </form>
+            <Navbar />
+            <form onSubmit={handleSubmit} className="window white form">
+                <div className="form-group">
+                    <label htmlFor="title">Title</label>
+                    <input
+                        type="text"
+                        value={titleValue}
+                        onChange={(e) => setTitleValue(e.target.value)}
+                        className="text-input"
+                    />
                 </div>
-            </div>
+
+                <div className="form-group">
+                    <label htmlFor="textarea">Secrets go here:</label>
+                    <textarea
+                        placeholder="Content"
+                        value={contentValue}
+                        onChange={(e) => setContentValue(e.target.value)}
+                        className="textarea-input"
+                    />
+                </div>
+
+                <div className="image">
+                    <h2>Add Image (Optional):</h2>
+                    <input type="file" onChange={handleUpload} />
+                    {imgBase64 && <img src={imgBase64} alt="Preview" />}
+                </div>
+
+                <button type="submit" className="form-submit-btn">Reveal</button>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                {!isHidden && <p>Secret shared successfully!</p>}
+            </form>
         </>
     )
 };

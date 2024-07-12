@@ -1,11 +1,54 @@
 
 
-.profile-container {
-  position: relative;
-  left: 225px;
+.profile-content {
+  background-color: silver;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 6px double #fff;
+  margin: 4rem auto;
+  padding: 1em;
+  width: fit-content;
+  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgba(0, 0, 0, .5);
+  transition: transform 0.3s ease;
 }
 
+.profile-content:hover {
+  transform: scale(1.2);
+  box-shadow: none;
+}
 
+a.improve-card {
+  margin-top: 20px;
+  border-style: solid;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 32%;
+  border-right-width: 3px;
+  border-left-width: 3px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  transition: transform 0.3s ease;
+}
+
+a.improve-card:hover {
+  transform: scale(1.1);
+  background-color: var(--background-color);
+}
+
+.user-post {
+  display: flex;
+}
+
+img.userEachImage {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.marginChange{
+  margin: 20px auto;
+}
 
 /* .profile-container {
   font-family: "Minecraft";
